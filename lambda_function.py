@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     longitude = '122.1215'
     
     api_url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current_weather=true&temperature_unit=fahrenheit"
-    request = requests.get(api_url)
+    request = requests.get(api_url) 
     json_object = json.loads(request.text)
     current_temp = json_object['current_weather']['temperature']
     print(f"Current temperature {current_temp} degrees fahrenheit")
